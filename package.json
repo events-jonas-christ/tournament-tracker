@@ -52,5 +52,20 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": "babel.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/events-jonas-christ/tournament-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/events-jonas-christ/tournament-tracker/issues"
+  },
+  "homepage": "https://github.com/events-jonas-christ/tournament-tracker#readme",
+  "description": ""
 }

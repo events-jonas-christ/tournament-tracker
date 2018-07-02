@@ -1,24 +1,16 @@
 <template>
   <div class="home">
-    <h1>Admin Area</h1>
     <button v-on:click="signOut" >Sign Out</button><br>
-    <div class="container">
+    <div class="container add-data">
+      <h1>Add Game</h1>
     <input type="text" v-model="player1" placeholder="Player 1"/>
     <input type="number" v-model="score1" placeholder="0"/>
     <input type="number" v-model="score2" placeholder="0"/>
     <input type="text" v-model="player2" placeholder="Player 2"/>
     <button @click="submitGame()"> + Add Game</button>
-    </div>
+  </div>
   <div class="container">
-    <tbody>
-      <!--tr v-if='games' v-for='game in games'>
-        <td>{{game.player1}}</td>
-        <td>{{game.score1}}</td>
-        <td>{{game.score2}}</td>
-        <td>{{game.player2}}</td>
-      </tr-->
-
-    </tbody>
+    <h1>Games Played</h1>
       <b-table :data='games' :columns="[
                     {
                         field: 'player1',
@@ -69,7 +61,7 @@ import { database } from '../firebase.config'
       },
             methods: {
                 submitGame() {
-                    db.ref('scoreboard').push({
+                    database.ref('scoreboard').push({
                       player1: this.player1,
                       player2: this.player2,
                       score1: this.score1, 
@@ -94,14 +86,11 @@ import { database } from '../firebase.config'
   input {
     margin: 1rem;
   }
-  tbody {
-    width: 100%;
-  }
-  tr {
-    width: 100%;
-  }
-  td {
-    width: 20%
-  }
+  .add-data {
+    background: #EEE;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 10px
+      }
 
 </style>
