@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import About from './views/About.vue';
+import Login from './components/Login.vue';
+import SignUp from './components/SignUp.vue';
+import Table from './components/Table.vue';
 
 Vue.use(Router);
 
@@ -9,13 +11,26 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      name: 'table',
+      component: Table,
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About,
+      path: '/home',
+      name: 'home',
+      component: Home,
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login,
+    },
+    {
+      path: '/sign-up',
+      name: 'SignUp',
+      component: SignUp,
     },
   ],
 });

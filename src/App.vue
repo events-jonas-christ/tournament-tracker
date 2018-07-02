@@ -1,12 +1,27 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div>
+    <Nav/>
+    <div class="container has-text-centered">
     <router-view/>
+    </div>
   </div>
 </template>
+
+<script>
+import Nav from './components/Nav.vue';
+
+export default {
+  data () {
+    return {};
+  },
+  components: {
+    Nav,
+  },
+  firebase: {
+  },
+};
+
+</script>
 
 <style lang="scss">
 #app {
@@ -26,4 +41,30 @@
     }
   }
 }
+    input {
+        margin: 10px 0;
+        width: 20%;
+        padding: 15px;
+        border-radius: 10px
+    }
+    button {
+        margin-top: 20px;
+        width: 10%;
+        cursor: pointer;
+        background: #42b983;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        text-transform: uppercase;
+        border-radius: 10px
+    }
+    p {
+        margin-top: 40px;
+        font-size: 13px;
+        font-family: Helvetica, Arial, sans-serif
+        a {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
 </style>
